@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giới thiệu bản thân | My Portfolio</title>
-  <meta name="description" content="Trang web giới thiệu bản thân, sở thích, kỹ năng và mục tiêu của tôi.">
+  <meta name="description" content="Website giới thiệu bản thân của Lưu Lý Nhân">
+  <title>Lưu Lý Nhân | Personal Website</title>
 
   <style>
     * {
@@ -16,13 +16,14 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 85px;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #0b1020;
-      color: #f3f4f6;
-      line-height: 1.7;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b1120;
+      color: #f1f5f9;
+      line-height: 1.8;
     }
 
     a {
@@ -31,21 +32,23 @@
     }
 
     .container {
-      width: min(1050px, 90%);
+      width: 90%;
+      max-width: 1100px;
       margin: auto;
     }
 
+    /* Thanh điều hướng */
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(11, 16, 32, 0.92);
-      border-bottom: 1px solid #263047;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.95);
+      border-bottom: 1px solid #26354d;
       backdrop-filter: blur(12px);
     }
 
     nav {
-      min-height: 70px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -53,45 +56,54 @@
     }
 
     .logo {
-      font-size: 1.2rem;
-      font-weight: bold;
       color: #67e8f9;
+      font-size: 21px;
+      font-weight: bold;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
-      font-size: 0.92rem;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      transition: color 0.25s;
     }
 
     .nav-links a:hover {
       color: #67e8f9;
     }
 
+    /* Trang mở đầu */
     .hero {
-      min-height: 520px;
+      min-height: 540px;
       display: flex;
       align-items: center;
-      padding: 85px 0;
       background:
-        radial-gradient(circle at 85% 25%, #164e6380, transparent 35%),
-        radial-gradient(circle at 15% 80%, #312e8180, transparent 35%);
+        radial-gradient(circle at 80% 30%, #164e6370, transparent 35%),
+        radial-gradient(circle at 15% 85%, #3730a350, transparent 35%);
+    }
+
+    .hero-content {
+      padding: 90px 0;
     }
 
     .tag {
       display: inline-block;
-      padding: 6px 14px;
-      border: 1px solid #3b6478;
+      padding: 5px 15px;
+      margin-bottom: 22px;
+      border: 1px solid #3c7186;
       border-radius: 30px;
       color: #67e8f9;
-      margin-bottom: 22px;
-      font-size: 0.9rem;
+      font-size: 14px;
     }
 
-    h1 {
-      font-size: clamp(2.5rem, 7vw, 4.6rem);
-      line-height: 1.15;
+    .hero h1 {
+      font-size: clamp(36px, 7vw, 68px);
+      line-height: 1.2;
       margin-bottom: 22px;
     }
 
@@ -100,109 +112,149 @@
     }
 
     .hero p {
-      max-width: 620px;
-      color: #c0c9d8;
-      font-size: 1.08rem;
+      max-width: 700px;
+      color: #cbd5e1;
+      font-size: 17px;
       margin-bottom: 30px;
     }
 
     .button {
       display: inline-block;
-      padding: 12px 22px;
-      border-radius: 10px;
+      padding: 11px 23px;
       background: #67e8f9;
-      color: #0b1020;
+      color: #0b1120;
+      border-radius: 9px;
       font-weight: bold;
-      transition: transform 0.2s, background 0.2s;
+      transition: 0.25s;
     }
 
     .button:hover {
-      transform: translateY(-3px);
       background: #a5f3fc;
+      transform: translateY(-3px);
     }
 
-    section {
+    /* Các phần nội dung */
+    section.content-section {
       padding: 75px 0;
-      scroll-margin-top: 70px;
     }
 
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .section-desc {
-      color: #aab6c8;
+    .section-heading {
       margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: #94a3b8;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+      gap: 22px;
     }
 
     .card {
-      background: #131c30;
-      border: 1px solid #263047;
-      border-radius: 18px;
-      padding: 25px;
-      transition: transform 0.2s, border-color 0.2s;
+      padding: 27px;
+      background: #131e32;
+      border: 1px solid #26354d;
+      border-radius: 16px;
+      transition: transform 0.25s, border-color 0.25s;
     }
 
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
       border-color: #67e8f9;
     }
 
-    .card h3 {
+    .card .icon {
+      font-size: 30px;
       margin-bottom: 10px;
+    }
+
+    .card h3 {
       color: #67e8f9;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
-    .card p, .card li {
-      color: #c0c9d8;
+    .card p {
+      color: #cbd5e1;
     }
 
-    .card ul {
-      padding-left: 20px;
+    /* Kỹ năng */
+    .skills-box {
+      padding: 30px;
+      background: #131e32;
+      border: 1px solid #26354d;
+      border-radius: 16px;
     }
 
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
+      gap: 13px;
+      margin-top: 15px;
     }
 
     .skill {
-      background: #202d45;
-      border-radius: 8px;
-      padding: 7px 12px;
-      font-size: 0.9rem;
+      padding: 9px 17px;
+      color: #a5f3fc;
+      background: #1e3349;
+      border: 1px solid #31556b;
+      border-radius: 9px;
     }
 
+    /* Mục tiêu */
+    .goal {
+      background: linear-gradient(135deg, #132b42, #172044);
+      border: 1px solid #3c7186;
+      border-radius: 18px;
+      padding: 35px;
+    }
+
+    .goal h3 {
+      color: #67e8f9;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .goal p {
+      color: #dbeafe;
+      margin-bottom: 12px;
+    }
+
+    /* Lời kết */
     .contact {
       text-align: center;
-      background: #10192b;
-      border-top: 1px solid #263047;
-      border-bottom: 1px solid #263047;
+      background: #101a2d;
+      border-top: 1px solid #26354d;
+      padding: 65px 0;
+    }
+
+    .contact h2 {
+      font-size: 29px;
+      margin-bottom: 12px;
     }
 
     .contact p {
-      color: #c0c9d8;
-      margin: 15px auto 25px;
-      max-width: 600px;
+      color: #cbd5e1;
+      max-width: 650px;
+      margin: 0 auto 25px;
     }
 
     footer {
-      padding: 25px 0;
+      padding: 22px 0;
       text-align: center;
-      color: #8996aa;
-      font-size: 0.9rem;
+      color: #94a3b8;
+      font-size: 13px;
     }
 
-    @media (max-width: 650px) {
+    /* Giao diện điện thoại */
+    @media (max-width: 760px) {
       nav {
         padding: 15px 0;
         align-items: flex-start;
@@ -210,8 +262,7 @@
       }
 
       .nav-links {
-        gap: 12px;
-        font-size: 0.85rem;
+        gap: 10px 15px;
       }
 
       .grid {
@@ -219,196 +270,237 @@
       }
 
       .hero {
-        min-height: 430px;
+        min-height: 440px;
+      }
+
+      .hero-content {
+        padding: 65px 0;
+      }
+
+      section.content-section {
+        padding: 55px 0;
+      }
+
+      .goal {
+        padding: 25px;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- Thanh điều hướng -->
   <header>
     <nav class="container">
-      <a class="logo" href="#home">MyPortfolio.</a>
+      <a class="logo" href="#home">Lưu Lý Nhân.</a>
 
       <div class="nav-links">
         <a href="#about">Giới thiệu</a>
         <a href="#hobbies">Sở thích</a>
         <a href="#skills">Kỹ năng</a>
         <a href="#goals">Mục tiêu</a>
-        <a href="#contact">Liên hệ</a>
       </div>
     </nav>
   </header>
 
   <main>
+
+    <!-- Trang chủ -->
     <section class="hero" id="home">
-      <div class="container">
-        <span class="tag">Xin chào! Chào mừng đến với website của mình</span>
+      <div class="container hero-content">
+        <span class="tag">Welcome to my personal website!</span>
 
         <h1>
-          Mình là <span class="highlight">[Tên của bạn]</span>
+          Xin chào, mình là<br>
+          <span class="highlight">Lưu Lý Nhân</span>
         </h1>
 
         <p>
-          Mình là một học sinh yêu thích khám phá kiến thức mới,
-          phát triển bản thân và tìm hiểu về công nghệ.
-          Đây là nơi mình chia sẻ đôi nét về bản thân, sở thích
-          và những mục tiêu trong tương lai.
+          Mình là Lưu Lý Nhân, một người thân thiện, hòa đồng
+          và luôn mong muốn khám phá những điều mới mẻ.
+          Mình yêu thích việc học hỏi, tìm hiểu công nghệ
+          và dành thời gian cho những hoạt động thú vị
+          cùng bạn bè.
         </p>
 
-        <a class="button" href="#about">Khám phá thêm ↓</a>
+        <a class="button" href="#about">Tìm hiểu về mình ↓</a>
       </div>
     </section>
 
-    <section id="about">
+    <!-- Giới thiệu -->
+    <section class="content-section" id="about">
       <div class="container">
-        <h2 class="section-title">Giới thiệu bản thân</h2>
-        <p class="section-desc">
-          Một vài thông tin về con người mình.
-        </p>
+        <div class="section-heading">
+          <h2>👋 Giới thiệu bản thân</h2>
+          <p>Đôi nét về con người mình.</p>
+        </div>
 
         <div class="grid">
           <article class="card">
-            <h3>👋 Về mình</h3>
+            <div class="icon">😊</div>
+            <h3>Tính cách</h3>
             <p>
-              Xin chào! Mình là Lưu Lý Nhân, hiện đang là học sinh.
-              Mình luôn muốn học hỏi thêm những điều thú vị,
-              trải nghiệm những điều mới và hoàn thiện bản thân mỗi ngày.
+              Mình là người thân thiện và hòa đồng.
+              Mình luôn cố gắng tạo sự thoải mái khi giao tiếp,
+              sẵn sàng trò chuyện với mọi người và hợp tác
+              cùng các bạn trong học tập cũng như cuộc sống.
             </p>
           </article>
 
           <article class="card">
-            <h3>🌱 Tính cách</h3>
+            <div class="icon">🌱</div>
+            <h3>Quan điểm sống</h3>
             <p>
-              Mình là người thân thiện, hòa đồng và hay giúp đỡ bạn bè .
-              Mình tin rằng sự kiên trì, tinh thần học hỏi
-              và thái độ tích cực sẽ giúp mình tiến bộ từng ngày.
+              Mình tin rằng mỗi ngày đều là cơ hội để học hỏi
+              và phát triển bản thân. Mình luôn mong muốn
+              có thêm những trải nghiệm mới, tích lũy kiến thức
+              và trở thành phiên bản tốt hơn của chính mình.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="hobbies">
+    <!-- Sở thích -->
+    <section class="content-section" id="hobbies">
       <div class="container">
-        <h2 class="section-title">Sở thích của mình</h2>
-        <p class="section-desc">
-          Những điều mình thích làm trong thời gian rảnh.
-        </p>
+        <div class="section-heading">
+          <h2>✨ Sở thích của mình</h2>
+          <p>Những hoạt động mà mình yêu thích trong cuộc sống.</p>
+        </div>
 
         <div class="grid">
           <article class="card">
-            <h3>🎮 Chơi game</h3>
+            <div class="icon">🎮</div>
+            <h3>Chơi game</h3>
             <p>
-              Mình thích chơi game cùng bạn bè.
+              Mình thích chơi game cùng bạn bè vì hoạt động này
+              giúp mình thư giãn, giải trí và có thêm những
+              khoảng thời gian vui vẻ bên mọi người.
             </p>
           </article>
 
           <article class="card">
-            <h3>💻 Công nghệ</h3>
+            <div class="icon">💻</div>
+            <h3>Công nghệ</h3>
             <p>
-              Mình muốn tìm hiểu về máy tính, lập trình
-              và cách tạo ra những sản phẩm hữu ích trên Internet.
+              Mình yêu thích tìm hiểu về lập trình và cách
+              công nghệ hoạt động. Mình muốn khám phá cách
+              tạo ra các sản phẩm số và xây dựng những
+              website thú vị của riêng mình.
             </p>
           </article>
 
           <article class="card">
-            <h3>📚 Học hỏi</h3>
+            <div class="icon">📚</div>
+            <h3>Học tập</h3>
             <p>
-              Mình thích khám phá những kiến thức mới
-              và cải thiện các kỹ năng của bản thân.
+              Mình yêu thích những môn học có hoạt động
+              thực hành và trải nghiệm. Mình cảm thấy hứng thú
+              khi được tự mình khám phá, áp dụng kiến thức
+              và tìm hiểu cách giải quyết các vấn đề thực tế.
             </p>
           </article>
 
           <article class="card">
-            <h3>🎵 Giải trí</h3>
+            <div class="icon">🎵</div>
+            <h3>Giải trí</h3>
             <p>
-              Mình thích nghe nhạc và dành thời gian
-              cho những hoạt động giúp thư giãn.
+              Mình thích nghe nhạc để thư giãn sau những giờ
+              học tập căng thẳng. Bên cạnh đó, mình cũng thích
+              giao lưu và trò chuyện với bạn bè để chia sẻ
+              những câu chuyện thú vị trong cuộc sống.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="skills">
+    <!-- Kỹ năng -->
+    <section class="content-section" id="skills">
       <div class="container">
-        <h2 class="section-title">Kỹ năng của mình</h2>
-        <p class="section-desc">
-          Những kỹ năng mình đang có và muốn phát triển thêm.
-        </p>
+        <div class="section-heading">
+          <h2>🚀 Kỹ năng của mình</h2>
+          <p>Những khả năng và hoạt động mà mình yêu thích.</p>
+        </div>
 
-        <div class="card">
-          <h3>Kỹ năng hiện tại</h3>
+        <div class="skills-box">
+          <p>
+            Mình có sở thích chơi cầu lông và luôn cố gắng
+            rèn luyện khả năng phối hợp khi tham gia các hoạt động
+            cùng mọi người. Mình cũng có kỹ năng làm việc nhóm
+            và thích hợp tác với các bạn để cùng hoàn thành
+            công việc. Ngoài ra, mình còn thích hát và có thể
+            hát một chút để góp vui trong những dịp giao lưu.
+          </p>
+
           <div class="skills">
-            <span class="skill">Tiếng Anh</span>
-            <span class="skill">Làm việc nhóm</span>
-            <span class="skill">Giao tiếp</span>
-            <span class="skill">Tư duy sáng tạo</span>
-          </div>
-
-          <h3 style="margin-top: 25px;">Đang học thêm</h3>
-          <div class="skills">
-            <span class="skill">HTML</span>
-            <span class="skill">CSS</span>
-            <span class="skill">GitHub</span>
-            <span class="skill">Thiết kế website</span>
+            <span class="skill">🏸 Chơi cầu lông</span>
+            <span class="skill">🤝 Làm việc nhóm</span>
+            <span class="skill">🎤 Hát một chút (A little bit)</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="goals">
+    <!-- Mục tiêu tương lai -->
+    <section class="content-section" id="goals">
       <div class="container">
-        <h2 class="section-title">Mục tiêu tương lai</h2>
-        <p class="section-desc">
-          Những điều mình muốn thực hiện trong thời gian tới.
-        </p>
+        <div class="section-heading">
+          <h2>🎯 Mục tiêu tương lai</h2>
+          <p>Ước mơ và định hướng mà mình đang hướng tới.</p>
+        </div>
 
-        <div class="grid">
-          <article class="card">
-            <h3>🎯 Trong học tập</h3>
-            <p>
-              Cố gắng học tập tốt hơn, trau dồi ngoại ngữ
-              và chủ động tìm hiểu những kiến thức mới.
-            </p>
-          </article>
+        <div class="goal">
+          <h3>Đại học Công nghệ TP.HCM (HUTECH)</h3>
 
-          <article class="card">
-            <h3>🚀 Trong tương lai</h3>
-            <p>
-              Học cách xây dựng những dự án của riêng mình,
-              phát triển kỹ năng công nghệ và khám phá
-              lĩnh vực nghề nghiệp phù hợp.
-            </p>
-          </article>
+          <p>
+            Mục tiêu của mình trong tương lai là có cơ hội
+            học tập tại Trường Đại học Công nghệ TP.HCM (HUTECH).
+            Mình mong muốn được tiếp cận với môi trường học tập
+            năng động, tích lũy kiến thức và phát triển
+            những kỹ năng cần thiết cho bản thân.
+          </p>
+
+          <p>
+            Để tiến gần hơn đến mục tiêu đó, mình sẽ cố gắng
+            học tập, trau dồi kỹ năng và chủ động tham gia
+            những hoạt động thực hành, trải nghiệm.
+            Mình hy vọng những nỗ lực hôm nay sẽ giúp mình
+            xây dựng nền tảng vững chắc cho tương lai.
+          </p>
         </div>
       </div>
     </section>
 
+    <!-- Lời kết -->
     <section class="contact" id="contact">
       <div class="container">
-        <h2 class="section-title">Kết nối với mình</h2>
+        <h2>Cảm ơn bạn đã ghé thăm! 💙</h2>
+
         <p>
-          Cảm ơn bạn đã ghé thăm website của mình!
-          Hy vọng chúng ta sẽ có cơ hội chia sẻ và học hỏi
-          thêm nhiều điều thú vị.
+          Mình rất vui vì bạn đã dành thời gian tìm hiểu
+          về mình. Mình hy vọng sẽ có thêm nhiều cơ hội
+          học hỏi, kết nối và trải nghiệm những điều mới
+          cùng mọi người trong tương lai.
         </p>
 
         <a class="button"
            href="https://github.com/"
            target="_blank"
            rel="noopener noreferrer">
-          Ghé thăm GitHub của mình ↗
+          Khám phá GitHub ↗
         </a>
       </div>
     </section>
+
   </main>
 
   <footer>
     <div class="container">
-      © <span id="year"></span> [Tên của bạn].
-      Được tạo bằng HTML, CSS và GitHub Pages.
+      © <span id="year"></span> Lưu Lý Nhân.
+      Được xây dựng bằng HTML, CSS và GitHub Pages.
     </div>
   </footer>
 
@@ -416,5 +508,6 @@
     document.getElementById("year").textContent =
       new Date().getFullYear();
   </script>
+
 </body>
 </html>
